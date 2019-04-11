@@ -1,0 +1,6 @@
+
+\.idea/
+
+date_spider/date_spider/__pycache__/
+
+date_spider/date_spider/spiders/__pycache__/
