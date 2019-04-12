@@ -8,11 +8,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import os
 from matplotlib import cm
-import jieba
-from wordcloud import WordCloud, ImageColorGenerator
-import PIL.Image as Image
 
 plt.style.use('ggplot')
 
