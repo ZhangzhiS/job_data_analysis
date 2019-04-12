@@ -4,6 +4,9 @@
 # @Time     : 2019/4/11 下午6:51
 # @Filename : data_analysis
 # @Software : PyCharm
+"""
+数据统计分析
+"""
 
 import matplotlib.pyplot as plt
 import numpy as np

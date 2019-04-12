@@ -4,6 +4,9 @@
 # @Time     : 2019/4/12 下午1:45
 # @Filename : generate_word_cloud
 # @Software : PyCharm
+"""
+生成词云
+"""
 from wordcloud import WordCloud
 import jieba
 import numpy as np

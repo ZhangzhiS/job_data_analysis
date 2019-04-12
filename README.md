@@ -25,7 +25,14 @@ matplotlib==3.0.3
 ![salary_quanguo_min.png](https://github.com/ZhangzhiS/job_data_analysis/blob/master/data/salary_quanguo_min.png?raw=true)
 
 - 职位描述
-根据职位描述中出现的词语生成的图云，我所有的职位都是根据Python搜索的，但是出现最多的词汇是MYSQL？
+根据职位描述中出现的词语生成的图云，我所有的职位都是根据Python搜索的，下面就是Python开发需要了解的技术了。
 
 ![job.png](https://github.com/ZhangzhiS/job_data_analysis/blob/master/data/jd.jpg?raw=true)
 
+- 文件目录
+
+    - data：中是一些爬取到的数据，生成的图片等。
+    - data_analysis：数据统计分析，详细可以参考注释。
+    - date_spider：Scrapy爬虫。
+
+![file_tree](https://github.com/ZhangzhiS/job_data_analysis/blob/master/data/file_tree.png?raw=true)
