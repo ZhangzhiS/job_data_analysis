@@ -6,6 +6,7 @@
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+import random
 
 
 class DateSpiderSpiderMiddleware(object):
@@ -101,3 +102,35 @@ class DateSpiderDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class MyproxiesSpiderMiddleware(object):
+
+    def __init__(self, ip=''):
+        self.ip = ip
+
+    def process_request(self, request, spider):
+        IPPOOL = [
+            {"ipaddr": "115.159.201.179:80"},
+            {"ipaddr": "113.106.94.213:80"},
+            {"ipaddr": "101.200.141.114:80"},
+            {"ipaddr": "101.200.143.168:80"},
+            {"ipaddr": "211.138.61.27:80"},
+            {"ipaddr": "121.40.203.107:80"},
+            {"ipaddr": "211.138.61.27:8080"},
+            {"ipaddr": "58.221.55.58:808"},
+            {"ipaddr": "120.198.248.34:8080"},
+            {"ipaddr": "120.198.248.29:8080"},
+            {"ipaddr": "120.198.248.36:8080"},
+            {"ipaddr": "120.198.248.19:8080"},
+            {"ipaddr": "120.198.248.26:8080"},
+            {"ipaddr": "120.198.248.27:8080"},
+            {"ipaddr": "120.198.248.31:8080"},
+            {"ipaddr": "120.198.248.32:8080"},
+            {"ipaddr": "120.198.248.33:8080"},
+            {"ipaddr": "120.198.248.40:8080"},
+            {"ipaddr": "120.198.248.43:8080"},
+        ]
+        thisip = random.choice(IPPOOL)
+        print("this is ip:" + thisip["ipaddr"])
+        request.meta["proxy"] = "http://" + thisip["ipaddr"]

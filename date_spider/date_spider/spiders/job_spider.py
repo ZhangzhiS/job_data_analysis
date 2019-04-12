@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import time
 
 from date_spider.items import DateSpiderItem
 
@@ -22,14 +23,18 @@ class ExampleSpider(scrapy.Spider):
         """//*[@id="filter-box"]/div/div[2]/dl[1]/dd/a[4]"""
         city_list = city_doc.xpath("a")
         # print(city_list)
-        for item in city_list[2:]:
+        for item in city_list:
             path = item.xpath("@href").extract()[0]
-            url_lisu = create_url(path)
-            for url in url_lisu:
-                yield scrapy.Request(
-                    url=url,
-                    callback=self.parse
-                )
+            if "javascr" in path:
+                pass
+            else:
+                url_lisu = create_url(path)
+                for url in url_lisu:
+                    yield scrapy.Request(
+                        url=url,
+                        callback=self.parse,
+                    )
+                    time.sleep(2)
 
     def parse(self, response):
         job_items = response.css("div.job-primary")
